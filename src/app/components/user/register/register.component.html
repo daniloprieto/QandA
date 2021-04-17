@@ -1,1 +1,73 @@
-<p>register works!</p>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-6 offset-lg-3">
+      <div class="card">
+        <div class="card-body">
+          <h3 class="text-center title">Register User</h3>
+          <form [formGroup]="registerForm" (ngSubmit)="register()">
+            <div class="mb-3">
+              <input
+                type="text"
+                class="form-control form-control-lg"
+                placeholder="Input your e-mail"
+                formControlName="user">
+
+              <div
+                class="text-danger"
+                *ngIf= "registerForm.get('user')?.hasError('required')
+                        && registerForm.get('user')?.touched">
+                <strong>E-mail is required</strong>
+              </div>
+
+              <div
+                class="text-danger"
+                *ngIf= "registerForm.get('user')?.hasError('email')
+                        && registerForm.get('user')?.touched">
+                <strong>Enter a valid e-mail</strong>
+              </div>
+
+            </div>
+            <div class="mb-3">
+              <input
+                type="password"
+                class="form-control form-control-lg"
+                placeholder="Enter password"
+                formControlName="pass">
+
+              <div
+                class="text-danger"
+                *ngIf= "registerForm.get('pass')?.hasError('required')
+                        && registerForm.get('pass')?.touched">
+                <strong>Password is required</strong>
+              </div>
+
+              <div
+                class="text-danger"
+                *ngIf= "registerForm.get('pass')?.hasError('minlength')
+                        && registerForm.get('pass')?.touched">
+                <strong>Min 8 characters</strong>
+              </div>
+
+            </div>
+            <div class="mb-3">
+              <input
+                type="password"
+                class="form-control form-control-lg"
+                placeholder="Repeat password"
+                formControlName="passrepeat">
+
+              <div
+                class="text-danger"s
+                *ngIf="registerForm.hasError('notSame')">
+                <strong>Password not same</strong>
+              </div>
+
+            </div>
+            <button class="btn btn-secondary btn-lg" routerLink="/user">Return</button>
+            <button class="btn btn-primary btn-lg float-end" type="submit" [disabled]="registerForm.invalid">Accept</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

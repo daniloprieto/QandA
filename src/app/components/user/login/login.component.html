@@ -3,22 +3,77 @@
     <div class="col-lg-6 offset-lg-3">
       <div class="card">
         <div class="card-body">
+
           <h2 class="text-center title">Login</h2>
-          <form [formGroup]="loginForm" (ngSubmit)="loginForm">
+
+          <form [formGroup]="loginForm" (ngSubmit)="login()">
+
             <div class="mb-3">
-              <input formControlname="user"  type="text" class="form-control form-control-lg" placeholder="E-mail">
+
+              <input
+                formControlName="user"
+                type="text"
+                class="form-control form-control-lg"
+                placeholder="E-mail">
+
+              <span
+                class="text-danger"
+                *ngIf="loginForm.get('user')?.hasError('required')
+                        && loginForm.get('user')?.touched">
+                <strong>E-mail is required</strong>
+              </span>
+
+              <span
+                class="text-danger"
+                *ngIf="loginForm.get('user')?.hasError('email')
+                        && loginForm.get('user')?.touched">
+                <strong>Invalid E-mail</strong>
+              </span>
+
             </div>
+
             <div class="mb-3">
-              <input formControlName="pass" type="password" class="form-control form-control-lg" placeholder="Password">
+
+              <input
+                formControlName="pass"
+                type="password"
+                class="form-control form-control-lg"
+                placeholder="Password">
+
+              <span
+                class="text-danger"
+                *ngIf="loginForm.get('pass')?.hasError('required')
+                        && loginForm.get('pass')?.touched">
+                <strong>password is required</strong>
+              </span>
+
+              <span
+                class="text-danger"
+                *ngIf="loginForm.get('pass')?.hasError('email')
+                        && loginForm.get('pass')?.touched">
+                <strong>Invalid Password</strong>
+              </span>
+
             </div>
-            <button class="btn btn-secondary btn-lg" routerLink="/">return</button>
-            <button class="btn btn-primary btn-lg float-end">accept</button>
+
+            <button
+              class="btn btn-secondary btn-lg"
+              routerLink="/">
+              return
+            </button>
+
+            <button
+              type="submit"
+              class="btn btn-primary btn-lg float-end"
+              [disabled]="loginForm.invalid">
+              accept
+            </button>
           </form>
           <br>
           <div class="text-center">
-            <a href="#">Register</a>
+            <a routerLink="register">Register</a>
             <br>
-            <a href="#">Recover password</a>
+            <a routerLink="recover-password">Recover password</a>
           </div>
         </div>
       </div>
