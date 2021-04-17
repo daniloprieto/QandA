@@ -1,7 +1,15 @@
+import { StartComponent } from './components/start/start.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: '', component: StartComponent },
+  {
+    path:'user', loadChildren: () => import('./components/user/user.module').then(m => m.UserModule)
+  },
+  { path: '**', redirectTo: '/', pathMatch: 'full'}
+
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
