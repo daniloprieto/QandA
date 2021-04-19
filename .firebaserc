@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "qanda-3246c": {
+      "hosting": {
+        "QandA": [
+          "qanda-3246c"
+        ]
+      }
+    }
+  }
+}

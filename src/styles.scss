@@ -1,19 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+$primary: rgb(51,51,51);
+$success: #198754;
+$danger: #a71c28;
+$font-primary:'Monserrat', sans-serif;
+
 body {
   background: #c31432;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #240b36, #c31432);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #240b36, #c31432); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: -webkit-linear-gradient(to right, #240b36, #c31432);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #240b36, #c31432); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .btn-principal{
   height: 3.125rem;
-  background-color: rgb(51,51,51);
+  background-color: $primary;
   border-color: rgba(0,0,0,0.1);
   color:white;
   font-size: 20px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: $font-primary;
 }
 
 .title{
-  font-family: 'Montserrat', sans-serif;
+  font-family: $font-primary;
+}
+
+.card-title{
+  padding: 0px 22px;
 }
