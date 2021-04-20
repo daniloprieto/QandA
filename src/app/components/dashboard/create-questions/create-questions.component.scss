@@ -1,0 +1,59 @@
+@import '../../../../styles.scss';
+
+.inputQuestion{
+  text-align: center;
+  font-family: $font-primary;
+  font-size: 2rem;
+}
+
+.background-item{
+  background-color: #131d2d;
+  border-radius: 20px;
+  height: 100px;
+}
+
+.subtitle{
+  font-size:25px;
+  font-weight: 800;
+  color:whitesmoke;
+  padding-top:5px;
+  margin-bottom: 0px;
+  font-family: $font-primary;
+}
+
+.seconds-points{
+  font-size:18px;
+  font-weight: 800;
+  color:whitesmoke;
+  margin-left:7px;
+  margin-right:7px;
+  margin-bottom:0px;
+}
+
+.fa-minus, .fa-plus{
+  color:whitesmoke;
+  cursor:pointer;
+  font-size: 13px;
+  //background-color: #273346;
+  padding:7px;
+}
+
+.form-range{
+  padding:0px 50px;
+}
+
+input[type=range]::-webkit-slider-thumb{
+  background: whitesmoke;
+}
+
+.input-answer{
+  text-align: left;
+  font-family: $font-primary;
+  font-size: 1rem;
+  padding: 0.5rem;
+  padding-left: 1rem;
+}
+
+.far, .fas{
+  cursor:pointer;
+}

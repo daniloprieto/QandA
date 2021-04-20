@@ -1,1 +1,95 @@
-<p>create-questions works!</p>
+<div
+  *ngIf="showError"
+  class="col-lg-6 offset-lg-3 alert alert-danger text-center"
+  role="alert">
+  Please, enter all fields
+</div>
+
+<div
+  *ngIf="showError2"
+  class="col-lg-6 offset-lg-3 alert alert-danger text-center"
+  role="alert">
+  Please, Select a correct answer
+</div>
+
+<div class="container">
+  <div class="row mt-3 mb-5">
+    <div class="col-lg-8 offset-lg-2">
+
+      <form [formGroup]="addQuestion" (ngSubmit)="addQ()">
+
+        <input
+          formControlName="title"
+          type="text"
+          class="form-control form-control-lg inputQuestion"
+          placeholder="Enter question"
+          maxlength="150">
+
+        <div class="row mt-5">
+          <div class="col-lg-6 text-center">
+            <div class="background-item">
+              <p class="subtitle">Seconds</p>
+              <div style="display:inline-flex">
+                <i class="fa fa-minus" (click)="addQuestion.get('seconds')?.patchValue(addQuestion.get('seconds')?.value - 1 )"></i>
+                <p class="seconds-points">{{addQuestion.get('seconds')?.value}}</p>
+                <i class="fa fa-plus" (click)="addQuestion.get('seconds')?.patchValue(addQuestion.get('seconds')?.value + 1 )"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 text-center">
+            <div class="background-item">
+              <p class="subtitle">Points</p>
+              <p class="seconds-points">{{ addQuestion.get('points')?.value}}</p>
+              <input formControlName="points" type="range" class="form-range" min="0" max="2000">
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-5">
+          <div class="col-6">
+            <div formGroupName="answer1" class="input-group">
+              <input formControlName="title" type="text" class="form-control input-answer" placeholder="Add answer 1">
+              <div (click)="isTrue('answer1')" class="input-group-text">
+                <i [ngClass]="addQuestion.get('answer1')?.get('isTrue')?.value === true ? 'fas fa-check-circle animate__animated animate__heartBeat' : 'far fa-circle'"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div formGroupName="answer2" class="input-group">
+              <input formControlName="title" type="text" class="form-control input-answer" placeholder="Add answer 2">
+              <div (click)="isTrue('answer2')" class="input-group-text">
+                <i [ngClass]="addQuestion.get('answer2')?.get('isTrue')?.value === true ? 'fas fa-check-circle animate__animated animate__heartBeat' : 'far fa-circle'"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-4">
+          <div class="col-6">
+            <div formGroupName="answer3" class="input-group">
+              <input formControlName="title" type="text" class="form-control input-answer" placeholder="Add answer 3 (optional)">
+              <div (click)="isTrue('answer3')" class="input-group-text">
+                <i [ngClass]="addQuestion.get('answer3')?.get('isTrue')?.value === true ? 'fas fa-check-circle animate__animated animate__heartBeat' : 'far fa-circle'"></i>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div formGroupName="answer4" class="input-group">
+              <input formControlName="title" type="text" class="form-control input-answer" placeholder="Add answer 4 (optional)">
+              <div (click)="isTrue('answer4')" class="input-group-text">
+                <i [ngClass]="addQuestion.get('answer4')?.get('isTrue')?.value === true ? 'fas fa-check-circle animate__animated animate__heartBeat' : 'far fa-circle'"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-3">
+          <div class="col-12 text-center">
+            <button class="btn-principal">Add question</button>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
