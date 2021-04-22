@@ -1,3 +1,5 @@
+import { Question } from './../../../models/question';
+import { Answer } from './../../../models/answer';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { QuizService } from './../../../services/quiz.service';
 import { Component, OnInit } from '@angular/core';
@@ -56,6 +58,44 @@ export class CreateQuestionsComponent implements OnInit {
       this.error();
 
     }
+
+    let answersNumber: string[] = ['answer1', 'answer2', 'answer3', 'answer4'];
+    let listAnswers: Answer[] = [];
+
+    for ( let answer of answersNumber ) {
+
+      const resTitle = this.addQuestion.get(answer)?.get('title')?.value;
+      const resIsTrue = this.addQuestion.get(answer)?.get('isTrue')?.value;
+
+      const res: Answer = {
+        title: resTitle,
+        isTrue: resIsTrue
+      };
+
+      if ( this.addQuestion.get(answer)?.get('title')?.value !== '' ) {
+
+        listAnswers.push(res);
+
+      }
+
+    }
+
+    const title = this.addQuestion.get('title')?.value;
+    const seconds = this.addQuestion.get('seconds')?.value;
+    const points = this.addQuestion.get('points')?.value;
+
+    const newQuestion: Question = {
+      title: title,
+      seconds: seconds,
+      points: points,
+      listAnswers: listAnswers
+    };
+
+    console.log(newQuestion);
+
+    this._quizService.addQuestion(newQuestion);
+
+    this.reset();
 
   }
 
@@ -124,6 +164,12 @@ export class CreateQuestionsComponent implements OnInit {
         this.showError2 = false;
       }, 3000);
     }
+  }
+
+  reset(){
+    this.addQuestion.reset();
+    this.addQuestion.get('seconds')?.patchValue(10);
+    this.addQuestion.get('points')?.patchValue(1000);
   }
 
 }

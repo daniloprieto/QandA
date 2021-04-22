@@ -1,0 +1,23 @@
+<ng-container *ngIf="listQuestions.length > 0">
+  <div class="row mt-3">
+    <div class="col-lg-8 offset-lg-2">
+      <div class="card">
+        <ng-container *ngFor="let question of listQuestions">
+          <div class="card-body text-center">
+            <p class="titleQuestion">{{ question.title }}</p>
+            <div class="row">
+              <div class="col-6">
+                <p>
+                  <span class="badge bg-dark"> {{ question.seconds }}s</span>
+                </p>
+                <p>
+                  <span class="badge bg-dark"> {{ question.points }}pt</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</ng-container>

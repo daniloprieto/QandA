@@ -1,9 +1,9 @@
 export class Answer{
-  description: string;
+  title: string;
   isTrue: boolean;
 
-  constructor(description: string, isTrue: boolean){
-    this.description = description;
+  constructor(title: string, isTrue: boolean){
+    this.title = title;
     this.isTrue = isTrue;
   }
 }

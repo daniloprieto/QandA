@@ -8,6 +8,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ListQuestionnairesComponent } from './list-questionnaires/list-questionnaires.component';
 import { CreateQuizComponent } from './create-quiz/create-quiz.component';
 import { CreateQuestionsComponent } from './create-questions/create-questions.component';
+import { ListQuestionsComponent } from './list-questions/list-questions.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { CreateQuestionsComponent } from './create-questions/create-questions.co
     NavbarComponent,
     ListQuestionnairesComponent,
     CreateQuizComponent,
-    CreateQuestionsComponent
+    CreateQuestionsComponent,
+    ListQuestionsComponent
   ],
   imports: [
     CommonModule,
