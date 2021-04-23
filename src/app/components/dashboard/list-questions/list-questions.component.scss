@@ -5,3 +5,23 @@
   font-size: 20px;
   font-family: $font-primary;
 }
+
+.list-group-item{
+  font-size: 1.25rem;
+  font-family: $font-primary;
+  text-align: center;
+  color: $primary;
+}
+
+.true{
+  background-color: $success;
+  color:whitesmoke;
+}
+
+.fas {
+  padding-top: 30px;
+  font-size: 20px;
+  cursor: pointer;
+  color:$danger;
+  float: right;
+}
