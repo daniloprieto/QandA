@@ -9,6 +9,7 @@ import { ListQuestionnairesComponent } from './list-questionnaires/list-question
 import { CreateQuizComponent } from './create-quiz/create-quiz.component';
 import { CreateQuestionsComponent } from './create-questions/create-questions.component';
 import { ListQuestionsComponent } from './list-questions/list-questions.component';
+import { ViewQuizComponent } from './view-quiz/view-quiz.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { ListQuestionsComponent } from './list-questions/list-questions.componen
     ListQuestionnairesComponent,
     CreateQuizComponent,
     CreateQuestionsComponent,
-    ListQuestionsComponent
+    ListQuestionsComponent,
+    ViewQuizComponent
   ],
   imports: [
     CommonModule,

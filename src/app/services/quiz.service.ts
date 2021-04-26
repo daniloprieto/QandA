@@ -29,4 +29,12 @@ export class QuizService {
   getQuizByIdUser(uid: string){
     return this._firestore.collection('quizzes', ref => ref.where('uid', '==', uid) ).snapshotChanges();
   }
+
+  deleteQuiz(id: string){
+    return this._firestore.collection('quizzes').doc(id).delete();
+  }
+
+  getQuiz(id: string): Observable<any>{
+    return this._firestore.collection('quizzes').doc(id).get();
+  }
 }

@@ -1,3 +1,4 @@
+import { ToastrService } from 'ngx-toastr';
 import { QuizService } from './../../../services/quiz.service';
 import { Router } from '@angular/router';
 import { Component, OnDestroy, OnInit } from '@angular/core';
@@ -20,6 +21,7 @@ export class ListQuestionnairesComponent implements OnInit, OnDestroy {
   constructor(
     private afAuth: AngularFireAuth,
     private _quizService: QuizService,
+    private toastr: ToastrService,
     private router: Router ) { }
 
   ngOnInit(): void {
@@ -69,6 +71,20 @@ export class ListQuestionnairesComponent implements OnInit, OnDestroy {
         }
       );
 
+  }
+
+  deleteQuiz(id: string){
+    this.loading = true;
+    this._quizService.deleteQuiz(id).then(
+      data => {
+        this.toastr.success('the questionnaire was successfully deleted', 'Quiz deleted');
+        this.loading = false;
+      },
+      error => {
+        this.toastr.error("the questionnaire can't delete", "Can't delete quiz");
+        this.loading = false;
+      }
+    );
   }
 
 }

@@ -1,3 +1,4 @@
+import { ViewQuizComponent } from './view-quiz/view-quiz.component';
 import { CreateQuizComponent } from './create-quiz/create-quiz.component';
 import { ListQuestionnairesComponent } from './list-questionnaires/list-questionnaires.component';
 import { NgModule } from '@angular/core';
@@ -7,7 +8,9 @@ import { CreateQuestionsComponent } from './create-questions/create-questions.co
 const routes: Routes = [
   { path:'', component: ListQuestionnairesComponent },
   { path:'createQuiz', component: CreateQuizComponent },
-  { path:'createQuestions', component: CreateQuestionsComponent }
+  { path:'createQuestions', component: CreateQuestionsComponent },
+  { path:'viewQuiz/:id', component: ViewQuizComponent }
+
 ];
 
 @NgModule({

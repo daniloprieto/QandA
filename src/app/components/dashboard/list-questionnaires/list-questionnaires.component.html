@@ -24,9 +24,9 @@
                 <td>{{ quiz.quantityQuestions }}</td>
                 <td><span class="badge bg-black">{{ quiz.code }}</span></td>
               <td>
-                <i class="fas fa-search"></i>
+                <i class="fas fa-search" [routerLink]="['/dashboard/viewQuiz', quiz.id]"></i>
                 <i class="fas fa-chart-line"></i>
-                <i class="fas fa-trash"></i>
+                <i class="fas fa-trash" (click)="deleteQuiz(quiz.id!)"></i>
               </td>
               </tr>
             </tbody>
@@ -37,3 +37,16 @@
     </div>
   </div>
 </div>
+
+<div *ngIf="listQuizzes.length > 0 && !loading" class="container">
+  <div class="row mt-3">
+    <div class="col-lg-8 offset-lg-2">
+      <div class="card">
+        <div class="card-body">
+          <h5>You don't have quizzes</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
