@@ -15,6 +15,7 @@ export class ListQuestionnairesComponent implements OnInit, OnDestroy {
   user$: Subscription = new Subscription();
   quiz$: Subscription = new Subscription();
   listQuizzes: Quiz[] = [];
+  loading: boolean = false;
 
   constructor(
     private afAuth: AngularFireAuth,
@@ -22,6 +23,9 @@ export class ListQuestionnairesComponent implements OnInit, OnDestroy {
     private router: Router ) { }
 
   ngOnInit(): void {
+
+    this.loading = true;
+
     this.user$ = this.afAuth.user.subscribe(
       user => {
         if ( user && user.emailVerified ){
@@ -49,6 +53,8 @@ export class ListQuestionnairesComponent implements OnInit, OnDestroy {
 
           this.listQuizzes = [];
 
+          this.loading = false;
+
           res.forEach( (element: any) => {
             this.listQuizzes.push({
               id: element.payload.doc.id,
@@ -59,6 +65,7 @@ export class ListQuestionnairesComponent implements OnInit, OnDestroy {
         },
         error => {
           console.error(error);
+          this.loading = false;
         }
       );
 

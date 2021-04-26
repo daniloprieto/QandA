@@ -1,7 +1,10 @@
 <div class="d-flex justify-content-center mt-5">
   <button class="btn-principal btn-qanda" routerLink="/dashboard/createQuiz">New</button>
 </div>
-<div class="container">
+<div *ngIf="loading"class="d-flex justify-content-center mt-5">
+  <app-spinner></app-spinner>
+</div>
+<div *ngIf="listQuizzes.length > 0 && !loading" class="container">
   <div class="row mt-5">
     <div class="col-lg-8 offset-lg-2">
       <div class="card">
