@@ -1,7 +1,6 @@
 import { Question } from "./question";
 
 export class Quiz {
-  id: number;
   uid: string;
   title: string;
   description: string;
@@ -11,7 +10,6 @@ export class Quiz {
   listQuestions: Question[];
 
   constructor(
-    id: number,
     uid: string,
     title: string,
     description: string,
@@ -20,7 +18,6 @@ export class Quiz {
     createdDate: Date,
     listQuestions: Question[],
   ){
-    this.id = id;
     this.uid = uid;
     this.title = title;
     this.description = description;

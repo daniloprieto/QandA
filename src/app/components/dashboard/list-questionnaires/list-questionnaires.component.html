@@ -16,10 +16,10 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Mundial de futbol</td>
-                <td>10</td>
-                <td><span class="badge bg-black">NAGTS4D7</span></td>
+              <tr *ngFor="let quiz of listQuizzes">
+                <td>{{ quiz.title }}</td>
+                <td>{{ quiz.quantityQuestions }}</td>
+                <td><span class="badge bg-black">{{ quiz.code }}</span></td>
               <td>
                 <i class="fas fa-search"></i>
                 <i class="fas fa-chart-line"></i>
