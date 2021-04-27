@@ -1,0 +1,17 @@
+@import '../../../../styles.scss';
+.container{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background:whitesmoke;
+  width: 300px;
+  height: 300px;
+  margin-top:30vh;
+  border-radius:100%;
+}
+
+.counter{
+  font-size:200px;
+  color:$success;
+}

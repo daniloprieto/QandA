@@ -12,7 +12,7 @@
     </div>
   </div>
   <div *ngFor="let question of quiz.listQuestions" class="row mt-5">
-    <div class="col-lg-8 offset-lg-2">
+    <div class="col-lg-6 offset-lg-3">
       <div class="card">
         <div class="card-body text-center">
           <h4 class="title">{{ question.title }}</h4>
@@ -24,20 +24,24 @@
               <p><span class="badge bg-dark">{{ question.points }}pts</span></p>
             </div>
           </div>
-          <ul class="list-group">
-            <li class="class-group-item"
+          <ul class=" col-lg-8 offset-lg-2 mt-3 list-group">
+            <li class="list-group-item"
                 *ngFor="let answer of question.listAnswers"
                 [ngClass]="answer.isTrue === true ? 'isTrue':''">{{ answer.title }}</li>
           </ul>
-
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<div class="row mb-3">
+<div class="row mt-3 mb-3">
   <div class="col-lg-8 offset-lg-2 text-center">
-    <button class="btn-principal" style="width: 100%; font-size:20px" routerLink="/dashboard"></button>
+    <button
+      class="btn-principal"
+      style="font-size:20px"
+      routerLink="/dashboard">
+      return
+    </button>
   </div>
 </div>

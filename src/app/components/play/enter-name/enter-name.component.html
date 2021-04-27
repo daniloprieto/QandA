@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="alert alert-danger" role="alert" *ngIf="error === true">
+    Please, enter your name
+  </div>
+
+  <input
+    type="text"
+    class="form-control input-accept mb-3"
+    placeholder="Enter your name"
+    [(ngModel)]="name">
+
+  <button
+    class="btn-principal btn-accept"
+    (click)="saveName()">
+    Accept
+  </button>
+
+</div>
+

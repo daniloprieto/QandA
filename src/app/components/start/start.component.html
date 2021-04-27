@@ -1,6 +1,10 @@
-<div class="contenedor">
+<div *ngIf="loading" class="d-flex justify-content-center mt-5">
+  <app-spinner></app-spinner>
+</div>
+
+<div class="contenedor" *ngIf="!loading">
   <div class="alert alert-danger" role="alert" *ngIf="error === true">
-    Ingresa un pin para continuar.
+    {{ errorText }}
   </div>
 
   <input

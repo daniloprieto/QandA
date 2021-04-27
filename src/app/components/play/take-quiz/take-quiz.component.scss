@@ -1,0 +1,56 @@
+@import '../../../../styles.scss';
+
+.container{
+  padding-top:30vh;
+}
+.counter{
+  background: whitesmoke;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.question-counter{
+  font-size: 2rem;
+  text-align: center;
+}
+
+.much-time{
+  color:$success;
+}
+.little-time{
+  color: $danger;
+}
+
+.title-question{
+  color:whitesmoke;
+}
+
+.list-group-item{
+  font-size:20px;
+  font-family: $font-primary;
+  color:$primary;
+  cursor: pointer;
+}
+
+.list-group-item:hover{
+  background:$primary;
+  color:whitesmoke;
+  opacity: 70%;
+}
+
+.selected{
+  background:$primary;
+  color:whitesmoke
+}
+
+.btn-accept{
+  width: 100%;
+  font-size:20px;
+}
+
+.btn-accept:hover{
+  background: $success;
+  color:whitesmoke;
+}

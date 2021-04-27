@@ -10,6 +10,10 @@ const routes: Routes = [
       .then(m => m.UserModule)
   },
   {
+    path:'play', loadChildren: () => import('./components/play/play.module')
+      .then(m => m.PlayModule)
+  },
+  {
     path:'dashboard', component: DashboardComponent ,loadChildren: () => import('./components/dashboard/dashboard.module')
       .then(m => m.DashboardModule)
   },
