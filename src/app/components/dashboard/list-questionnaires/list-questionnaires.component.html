@@ -25,7 +25,7 @@
                 <td><span class="badge bg-black">{{ quiz.code }}</span></td>
               <td>
                 <i class="fas fa-search" [routerLink]="['/dashboard/viewQuiz', quiz.id]"></i>
-                <i class="fas fa-chart-line"></i>
+                <i class="fas fa-chart-line" [routerLink]="[ '/dashboard/statistics', quiz.id ]"></i>
                 <i class="fas fa-trash" (click)="deleteQuiz(quiz.id!)"></i>
               </td>
               </tr>

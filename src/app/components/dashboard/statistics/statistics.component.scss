@@ -1,0 +1,12 @@
+@import '../../../../styles.scss';
+
+.fas{
+  cursor: pointer;
+  font-size: 25px;
+  margin: 0px 2px;
+}
+
+.fas.fa-trash{
+  color:$danger;
+}
+

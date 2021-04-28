@@ -24,4 +24,12 @@ export class ResQuizService {
   getAnswersUser(id: string): Observable<any>{
     return this._firestore.collection('answers').doc(id).get();
   }
+
+  getAnswersByIdQuiz(id:string){
+    return this._firestore.collection('answers', ref => ref.where('idQuiz','==', id) ).snapshotChanges();
+  }
+
+  deleteAnswersUser(id:string): Promise<any>{
+    return this._firestore.collection('answers').doc(id).delete();
+  }
 }

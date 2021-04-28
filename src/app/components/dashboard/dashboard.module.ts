@@ -10,6 +10,7 @@ import { CreateQuizComponent } from './create-quiz/create-quiz.component';
 import { CreateQuestionsComponent } from './create-questions/create-questions.component';
 import { ListQuestionsComponent } from './list-questions/list-questions.component';
 import { ViewQuizComponent } from './view-quiz/view-quiz.component';
+import { StatisticsComponent } from './statistics/statistics.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { ViewQuizComponent } from './view-quiz/view-quiz.component';
     CreateQuizComponent,
     CreateQuestionsComponent,
     ListQuestionsComponent,
-    ViewQuizComponent
+    ViewQuizComponent,
+    StatisticsComponent
   ],
   imports: [
     CommonModule,

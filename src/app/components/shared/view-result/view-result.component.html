@@ -9,7 +9,7 @@
       <div class="card-body">
         <div class="row mt-2">
           <div class="col-lg-6">
-            <h3 class="title">Name: {{ answersUser.name }}</h3>
+            <h3 class="title">Name: {{ answersUser.nameUser }}</h3>
           </div>
           <div class="col-lg-6">
             <h3 class="title">Points: {{ answersUser.totalPoints }}</h3>
@@ -47,10 +47,23 @@
           <div class="card-body text-center">
             <h3 class="title">{{ question.title }}</h3>
             <ul class="list-group">
-              <li *ngFor="" class="list-group-item"></li>
+              <li
+                *ngFor="let answer of question.listAnswers; let i = index"
+                class="list-group-item"
+                [ngClass]="{'isTrue': answer.isTrue === true && i === question.indexSelectedAnswer,
+                            'isFalse': answer.isTrue === false && i === question.indexSelectedAnswer }">
+                {{ answer.title }}
+              </li>
             </ul>
           </div>
         </div>
+      </div>
+    </div>
+    <div class="row mt-3 mb-3">
+      <div class="col-lg-6 offset-lg-3 text-center">
+        <button class="btn-principal" style="width: 100%; font-size: 28px">
+          Return
+        </button>
       </div>
     </div>
   </div>
